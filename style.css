@@ -819,167 +819,297 @@ a:hover, a:active {
 .site-footer:after {
 	clear: both;
 }
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-.widget {
-	margin: 0 0 1.5em;
-	/* Make sure select elements fit in widgets. */
+/* Custom CSS */
+/* XS */
+#masthead, #main .mid-text{
+	background: rgba(254,254,254,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 14%, rgba(209,209,209,1) 99%, rgba(128,128,128,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(254,254,254,1)), color-stop(14%, rgba(254,254,254,1)), color-stop(99%, rgba(209,209,209,1)), color-stop(100%, rgba(128,128,128,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 14%, rgba(209,209,209,1) 99%, rgba(128,128,128,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 14%, rgba(209,209,209,1) 99%, rgba(128,128,128,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 14%, rgba(209,209,209,1) 99%, rgba(128,128,128,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(254,254,254,1) 0%, rgba(254,254,254,1) 14%, rgba(209,209,209,1) 99%, rgba(128,128,128,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#808080', GradientType=1 );
 }
-
-.widget select {
-	max-width: 100%;
+#masthead{
+	display: grid;
+	grid-template-columns: 3fr 3fr 3fr;
+	grid-template-rows:  1fr 2fr 1fr 1fr;
+	justify-content: space-around;
+	justify-items: center;
+	align-items: center;
+	font-size: 1.2em;
+	border-bottom: solid .1em #056839
 }
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Posts and pages
---------------------------------------------------------------*/
-.sticky {
+#masthead div a{
+	color: #707070;
+}
+#masthead .fb-link{
+	grid-column: 1 / 4;
+	grid-row: 1 / 2;
+	font-family: oswald, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+#masthead .site-branding{
+	margin-top: .5em;
+	grid-column: 1 / 4;
+	grid-row: 2 / 3;
+}
+#masthead .site-branding img{
+	height: 3.5em;
+	width: auto;
+}
+#masthead .phn-link{
+	grid-column: 1 / 4;
+	grid-row: 3 / 4;
+	font-family: allumi-std, sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+#masthead .e-mail{
+	grid-column: 1 / 4;
+	grid-row: 4 /5;
+	font-family: oswald, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+#main .first-prlx{
+	padding-top: .75em;
+	font-family: adobe-hebrew, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 1.25em;
+	text-align: center;
+	color: #FFF;
+}
+#main .mid-text{
+	border-top: solid .25em #B3000C;
+	padding-bottom: 3em;
+	border-bottom: solid .25em #B3000C;
+}
+#main .mid-text h1{
+	text-align: center;
+	font-size: 1.5em;
+	line-height: 2em;
+	color: #056839;
+	margin: 0em;
+}
+#main .mid-text p{
 	display: block;
+	background: rgba(5,104,57,1);
+	background: -moz-linear-gradient(top, rgba(5,104,57,1) 0%, rgba(33,33,33,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(5,104,57,1)), color-stop(100%, rgba(33,33,33,1)));
+	background: -webkit-linear-gradient(top, rgba(5,104,57,1) 0%, rgba(33,33,33,1) 100%);
+	background: -o-linear-gradient(top, rgba(5,104,57,1) 0%, rgba(33,33,33,1) 100%);
+	background: -ms-linear-gradient(top, rgba(5,104,57,1) 0%, rgba(33,33,33,1) 100%);
+	background: linear-gradient(to bottom, rgba(5,104,57,1) 0%, rgba(33,33,33,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#056839', endColorstr='#212121', GradientType=0 );
+	width: auto;
+	padding: .5em;
+	margin: 0em .2em;
+	border-radius: 1em;
+	font-family: oswald, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.6em;
+	text-align: center;
+	color: #FFF;
 }
-
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
-.updated:not(.published) {
-	display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
-
-.bypostauthor {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-	/* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-
-/* Make sure embeds and iframes fit their containers. */
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
-/* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
-}
-
-/*--------------------------------------------------------------
-## Captions
---------------------------------------------------------------*/
-.wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
-}
-
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-
-.wp-caption-text {
+#main .scnd-prlx .first{
+	display: grid;
+	grid-template-columns: repeat(3, 3fr);
+	grid-template-rows:  repeat(4, 3fr);
+	justify-content: space-around;
+	justify-items: center;
+	align-items: center;
 	text-align: center;
 }
-
-/*--------------------------------------------------------------
-## Galleries
---------------------------------------------------------------*/
-.gallery {
-	margin-bottom: 1.5em;
+#main .scnd-prlx .first>div{
+	background: #FFF;
+	border-radius: 50%;
+	grid-row: 1 / 2;
+	height: 5em;
+    width: 5em;
+	font-size: 2em;
+	padding-top: 1.75em;
+	font-family: oswald, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #FFF;
 }
-
-.gallery-item {
-	display: inline-block;
-	text-align: center;
-	vertical-align: top;
-	width: 100%;
+#main .scnd-prlx .first>div:first-child{
+	padding-top: 1em;
+	grid-column: 1 / 4;
+	grid-row: 1 / 2;
 }
-
-.gallery-columns-2 .gallery-item {
-	max-width: 50%;
+#main .scnd-prlx .first>div:nth-child(even) {
+	background: rgba(139,0,9,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(139,0,9,1) 0%, rgba(33,33,33,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(139,0,9,1)), color-stop(100%, rgba(33,33,33,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(139,0,9,1) 0%, rgba(33,33,33,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(139,0,9,1) 0%, rgba(33,33,33,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(139,0,9,1) 0%, rgba(33,33,33,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(139,0,9,1) 0%, rgba(33,33,33,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b0009', endColorstr='#212121', GradientType=1 );
+	grid-column: 1 / 4;
+	grid-row: 2 / 3;
 }
-
-.gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
+#main .scnd-prlx .first>div:nth-child(odd) {
+	background: rgba(5,104,57,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(5,104,57,1) 0%, rgba(33,33,33,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(5,104,57,1)), color-stop(100%, rgba(33,33,33,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(5,104,57,1) 0%, rgba(33,33,33,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(5,104,57,1) 0%, rgba(33,33,33,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(5,104,57,1) 0%, rgba(33,33,33,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(5,104,57,1) 0%, rgba(33,33,33,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#056839', endColorstr='#212121', GradientType=1 );
 }
-
-.gallery-columns-4 .gallery-item {
-	max-width: 25%;
+#main .scnd-prlx .first>div:nth-child(3){
+	grid-column: 1 / 4;
+	grid-row: 3 / 4;
 }
-
-.gallery-columns-5 .gallery-item {
-	max-width: 20%;
+#main .scnd-prlx .first>p{
+	font-family: oswald, sans-serif;
+    font-weight: 400;
+	font-style: normal;
+	font-size: 2em;
+	color: #FFF;
+	margin: 0em;
+	grid-column: 1 / 4;
+	grid-row: 4 / 5;
 }
-
-.gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
+footer .site-info{
+	border-top: solid .1em #056839;
+	display: grid;
+	background: rgba(139,0,9,1);
+	background: -moz-linear-gradient(top, rgba(139,0,9,1) 0%, rgba(33,33,33,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(139,0,9,1)), color-stop(100%, rgba(33,33,33,1)));
+	background: -webkit-linear-gradient(top, rgba(139,0,9,1) 0%, rgba(33,33,33,1) 100%);
+	background: -o-linear-gradient(top, rgba(139,0,9,1) 0%, rgba(33,33,33,1) 100%);
+	background: -ms-linear-gradient(top, rgba(139,0,9,1) 0%, rgba(33,33,33,1) 100%);
+	background: linear-gradient(to bottom, rgba(139,0,9,1) 0%, rgba(33,33,33,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b0009', endColorstr='#212121', GradientType=0 );
+	grid-template-columns: 3fr 3fr 3fr;
+	grid-template-rows:  1fr 2fr 1fr 1fr;
+	justify-content: space-around;
+    justify-items: center;
+	align-items: center;
+	font-family: oswald, sans-serif;
+    font-weight: 400;
+	font-style: normal;
+	font-size: 1.2em;
+	color: #FFF;
 }
-
-.gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
+footer .site-info .first{
+	grid-column: 1 / 4;
+	grid-row:  1 / 2;
 }
-
-.gallery-columns-8 .gallery-item {
-	max-width: 12.5%;
+footer .site-info .second{
+	grid-column: 1 / 4;
+	grid-row:  2 / 3;
 }
-
-.gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
+footer .site-info .second img{
+	padding-top: .25em;
+	height: 2.5em;
+    width: auto;
 }
+footer .site-info .third{
+	grid-column: 1 / 4;
+	grid-row:  3 / 4;
+}
+footer .site-info .email{
+	grid-column: 1 / 4;
+	grid-row:  4 / 5;
+}
+/* SM */
+@media only screen and (min-width : 768px) {
+	#masthead{
+		grid-template-rows: 2fr 1fr;
+		font-size: 2em;
+	}
+	#masthead .fb-link{
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+	}
+	#masthead .site-branding{
+		grid-column: 2 / 3;
+		grid-row: 1 /2;
+	}
+	#masthead .phn-link{
+		grid-column: 3 / 4;
+		grid-row: 1 /2;
+	}
+	#masthead .e-mail{
+		grid-column: 1 / 4;
+		grid-row: 2 /3;
+	}
+	#main .first-prlx{
+		font-size: 3em;
+	}
+	#main .mid-text h1{
+		font-size: 2.5em;
+		line-height: 1.5em
+	}
+	#main .mid-text p{
+		height: 7em;
+		font-size: 2em;
+		margin: 0em 2em;
+	}
+	#main .scnd-prlx .first{
+		height: 100%;
+		grid-template-rows: 3fr 2fr;
+	}
+	#main .scnd-prlx .first>div{
+		grid-row: 1 / 2;
+	}
+	#main .scnd-prlx .first>div:first-child{
+		grid-column: unset;
+		grid-row: unset;
+	}
+	#main .scnd-prlx .first>div:nth-child(even){
+		grid-column: unset;
+		grid-row: unset;
+	}
+	#main .scnd-prlx .first>div:nth-child(3){
+		grid-column: unset;
+		grid-row: unset;
+	}
+	#main .scnd-prlx .first>p{
+		grid-column: 1 / 4;
+		grid-row: 2 / 3;
+	}
+	footer .site-info{
+		grid-template-rows: 2fr 1fr;
+		font-size: 2.5em;
+	}
+	footer .site-info .first{
+		grid-column: 1 / 2;
+		grid-row:  1 / 2;
+	}
+	footer .site-info .second{
+		grid-column: 2 / 3;
+		grid-row:  1 / 2;
+	}
+	footer .site-info .third{
+		grid-column: 3 / 4;
+		grid-row:  1 / 2;
+	}
+	footer .site-info .email{
+		grid-column: 1 / 4;
+		grid-row:  2 / 3;
+	}
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	#masthead{
+		font-size: 2.5em;
+	}
+	#main .mid-text p{
+		height: 6em;
+	}
+}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
 
-.gallery-caption {
-	display: block;
 }
